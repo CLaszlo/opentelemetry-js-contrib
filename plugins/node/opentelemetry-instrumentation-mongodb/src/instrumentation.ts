@@ -549,7 +549,7 @@ export class MongoDBInstrumentation extends InstrumentationBase {
         }
 
         let span = undefined;
-        if (currentSpan) {
+        if (currentSpan || this._config?.allowNoCorrelation) {
           span = instrumentation.tracer.startSpan(`mongodb.${commandType}`, {
             kind: SpanKind.CLIENT,
           });

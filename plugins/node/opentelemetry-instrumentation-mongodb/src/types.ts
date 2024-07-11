@@ -49,6 +49,8 @@ export interface MongoDBInstrumentationConfig extends InstrumentationConfig {
    * Custom serializer function for the db.statement tag
    */
   dbStatementSerializer?: DbStatementSerializer;
+
+  allowNoCorrelation?: boolean;
 }
 
 export interface MongoResponseHookInformation {
